@@ -1,13 +1,13 @@
 import React from 'react';
 import { CssBaseline, ThemeProvider, createTheme, Dialog } from '@mui/material';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar.jsx'
 import './index.css';
 import './App.css'
 import { useState } from 'react';
-import BookCard from './components/BookCard';
-import booksData from './booksData';
-import AddBook from './components/AddBooks';
-import Footer from './components/Footer';
+import BookCard from './components/BookCard.jsx';
+import booksData from './booksData.js';
+import AddBook from './components/AddBooks.jsx';
+// import Footer from './components/Footer';
 
 
 const theme = createTheme({
