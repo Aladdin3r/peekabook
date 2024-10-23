@@ -12,8 +12,11 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@googlemaps/adv-markers-utils": "^1.2.4",
     "@mui/icons-material": "^6.1.5",
     "@mui/material": "^6.1.5",
+    "@react-google-maps/api": "^2.20.3",
+    "dotenv": "^16.4.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0"

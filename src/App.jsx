@@ -1,14 +1,13 @@
 import React from 'react';
 import { CssBaseline, ThemeProvider, createTheme, Dialog } from '@mui/material';
-import Navbar from './components/navbar.jsx'
+import Navbar from './components/navbar.jsx';
 import './index.css';
-import './App.css'
+import './App.css';
 import { useState } from 'react';
 import BookCard from './components/BookCard.jsx';
 import booksData from './booksData.js';
 import AddBook from './components/AddBooks.jsx';
-// import Footer from './components/Footer';
-
+import Map from './components/map.jsx'; 
 
 const theme = createTheme({
   palette: {
@@ -27,21 +26,20 @@ const App = () => {
 
   const handleAddBook = (newBook) => {
     const updatedBooks = [
-      ...books, // Use the current state instead of booksData
-      { ...newBook, id: books.length + 1 } // Assign a new ID based on the current state
+      ...books,
+      { ...newBook, id: books.length + 1 }
     ];
-    setBooks(updatedBooks); // Update the state with the new array
-    setOpen(false); // Close modal after adding the book
-  };  
+    setBooks(updatedBooks);
+    setOpen(false);
+  };
 
   const handleOpen = () => {
-    setOpen(true); 
+    setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
   };
-
 
   return (
     <ThemeProvider theme={theme}>
@@ -52,12 +50,12 @@ const App = () => {
         </div>
         <div className="main-content">
           <h1>Welcome to Peekabook!</h1>
-          <div className='map'>
-            <p>Books near you (GOOGLE MAP API HERE)</p>
+          <div className="section-container">
+            <h2>Books Near You:</h2>
+            <Map /> 
           </div>
           <div className="section-container">
             <h2>Books You Might Like:</h2>
-
             <div className="book-listings">
               {books.map((book) => (
                 <BookCard
@@ -72,9 +70,6 @@ const App = () => {
               ))}
             </div>
           </div>
-        </div>
-        <div>
-          {/* <Footer/> */}
         </div>
       </div>
       <Dialog open={open} onClose={handleClose}>
