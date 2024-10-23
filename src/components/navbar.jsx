@@ -5,7 +5,7 @@ import { Search, Menu } from '@mui/icons-material';
 import { styled } from '@mui/system';
 
 const Logo = styled('img')({
-  height: '40px', // Adjust as needed
+  height: '40px',
   marginBottom: '16px',
 });
 
@@ -15,7 +15,7 @@ const Sidebar = styled('div')({
   display: 'flex',
   flexDirection: 'column',
   backgroundColor: '#554971',
-  height: '100vh', // Make it full height
+  height: '100%', 
   color: 'white',
 });
 
@@ -25,8 +25,8 @@ const SearchContainer = styled('form')({
   marginBottom: '16px',
 });
 
-const Navbar = () => {
-  const navItems = ['Discover', 'Book listings', 'My listings', 'My Loans', 'Account'];
+const Navbar = ({ onOpen }) => {
+  const navItems = ['Discover', 'My Wishlist', 'My Loans', 'My Listings', 'Account'];
 
   return (
     <Sidebar>
@@ -55,9 +55,10 @@ const Navbar = () => {
         ))}
       </List>
       <Link href="#" underline="none">
-        <Button variant="contained" color="primary" sx={{ marginTop: '16px', width: '100%' }}>
-          Create a listing
-        </Button>
+      <Button onClick={onOpen} variant="contained" color="primary" sx={{ marginTop: '16px', width: '100%' }}>
+        Create a listing
+      </Button>
+
       </Link>
     </Sidebar>
   );
