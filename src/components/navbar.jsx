@@ -11,14 +11,14 @@ const LogoContainer = styled('div')({
 
 const Logo = styled('img')({
   height: '40px',
-  marginRight: '10px', // Add some spacing between the logo and the text
+  marginRight: '10px', 
 });
 
 const AppName = styled('h1')({
-  fontSize: '1.5rem', // Adjust the font size
-  color: 'white', // White text to match the sidebar theme
-  margin: 0, // Remove any margin
-  fontWeight: 'normal', // Adjust the font weight if needed
+  fontSize: '1.5rem',
+  color: 'white', 
+  margin: 0, 
+  fontWeight: 'normal', 
 });
 
 const SearchContainer = styled('form')({
@@ -27,7 +27,7 @@ const SearchContainer = styled('form')({
   marginBottom: '16px',
 });
 
-const drawerWidth = 250; // Set width of the Drawer
+const drawerWidth = 250; 
 
 const Navbar = ({ onOpen }) => {
   const navItems = ['Discover', 'My Wishlist', 'My Loans', 'My Listings', 'Account'];
@@ -42,19 +42,16 @@ const Navbar = ({ onOpen }) => {
         '& .MuiDrawer-paper': {
           width: drawerWidth,
           boxSizing: 'border-box',
-          backgroundColor: '#554971', // Set background color to match your previous sidebar
+          backgroundColor: '#554971', 
           color: 'white',
         },
       }}
     >
       <div style={{ padding: '16px' }}>
-        {/* Logo and App Name */}
         <LogoContainer>
           <Logo src="logo-white.svg" alt="Logo" />
-          <AppName>Peekabook</AppName> {/* Add the app name next to the logo */}
+          <AppName>Peekabook</AppName> 
         </LogoContainer>
-        
-        {/* Search Field */}
         <SearchContainer>
           <TextField
             variant="outlined"
@@ -68,20 +65,18 @@ const Navbar = ({ onOpen }) => {
               ),
             }}
             sx={{
-              backgroundColor: 'white', // White background for the TextField
+              backgroundColor: 'white', 
               borderRadius: '4px',
               '& .MuiOutlinedInput-root': {
-                color: 'black', // Ensure text inside is black
+                color: 'black', 
               },
             }}
           />
         </SearchContainer>
-        
-        {/* Navigation Links */}
         <List>
           {navItems.map((text) => (
             <ListItem button key={text}>
-              <Link href="#" underline="none" sx={{ width: '100%', color: 'inherit' }}>
+              <Link href="#" underline="none" sx={{ width: '100%', color: '#f5f3f5' }}>
                 <ListItemText primary={text} />
               </Link>
             </ListItem>

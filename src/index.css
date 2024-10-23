@@ -32,6 +32,13 @@ h1 {
   line-height: 1.1;
 }
 
+.map {
+  background-color: #213547;
+  height: 200px;
+  width: 100%;
+  color: white;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

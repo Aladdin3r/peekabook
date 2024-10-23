@@ -11,7 +11,14 @@ import AddBook from './components/AddBooks.jsx';
 
 
 const theme = createTheme({
-  // You can customize your theme here
+  palette: {
+    primary: {
+      main: '#000f08',
+    },
+    secondary: {
+      main: '#5295cb',
+    },
+  },
 });
 
 const App = () => {
@@ -45,6 +52,9 @@ const App = () => {
         </div>
         <div className="main-content">
           <h1>Welcome to Peekabook!</h1>
+          <div className='map'>
+            <p>Books near you (GOOGLE MAP API HERE)</p>
+          </div>
           <div className="section-container">
             <h2>Books You Might Like:</h2>
 
