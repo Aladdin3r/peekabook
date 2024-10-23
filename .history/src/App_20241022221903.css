@@ -59,7 +59,7 @@
 
 /* book card stuff */
 .book-listings {
-  display: flex;
+  d
   flex-wrap: wrap;
   justify-content: center;
   
@@ -68,7 +68,7 @@
 
 .book-card {
   width: 250px;
-  height: 350px;
+  height: 400px;
   border: 1px solid #ddd;
   border-radius: 8px;
   margin: 0.5rem;

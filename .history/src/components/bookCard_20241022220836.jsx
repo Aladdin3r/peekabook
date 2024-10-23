@@ -1,3 +1,4 @@
+// components/BookCard.jsx
 import React from 'react';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
