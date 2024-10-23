@@ -7,7 +7,7 @@ import { useState } from 'react';
 import BookCard from './components/BookCard.jsx';
 import booksData from './booksData.js';
 import AddBook from './components/AddBooks.jsx';
-import Map from './components/map.jsx'; // Ensure the import is correct
+import Map from './components/map.jsx'; 
 
 const theme = createTheme({
   palette: {

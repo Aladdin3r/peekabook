@@ -4,7 +4,7 @@ import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100%',
-  height: '400px', // Increased height for better visibility
+  height: '400px', 
 };
 
 const center = {
@@ -28,10 +28,10 @@ const Map = () => {
   return (
     <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
       <GoogleMap
-        ref={mapRef} // Attach the mapRef to the GoogleMap component
+        ref={mapRef} 
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={15} // Adjust zoom level for better visibility of markers
+        zoom={15} 
       />
     </LoadScript>
   );
