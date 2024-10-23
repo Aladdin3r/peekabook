@@ -1,8 +1,8 @@
+// App.js
 import React from 'react';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import Navbar from './components/navbar';
 import './index.css';
-import './App.css'
 import BookCard from './components/bookCard';
 import booksData from './booksData';
 
@@ -23,8 +23,6 @@ const App = () => {
           {/* Other main content goes here */}
           <h1>Welcome to Peekabook!</h1>
           <p>Your content goes here.</p>
-
-          <h2>Active Listings</h2>
 
           <div className="book-listings">
             {booksData.map((book) => (

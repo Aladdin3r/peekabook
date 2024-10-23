@@ -24,7 +24,7 @@ const App = () => {
           <h1>Welcome to Peekabook!</h1>
           <p>Your content goes here.</p>
 
-          <h2>Active Listings</h2>
+          <p>Active Listings</p>
 
           <div className="book-listings">
             {booksData.map((book) => (
