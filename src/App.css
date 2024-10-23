@@ -1,9 +1,10 @@
 #root {
   display: flex; /* Use flexbox for layout */
+  flex-direction: column;
   max-width: 1280px;
   margin: 0;
   padding: 0;
-  height: 100vh; /* Make sure the root takes full height */
+  height: 100%;
 }
 
 .sidebar {
@@ -20,10 +21,14 @@
 }
 
 .main-content {
-  flex-grow: 1; /* Allow the main content to fill the remaining space */
+  flex-grow: 1;
   padding: 2rem;
-  text-align: center; /* Center the text */
+  text-align: center; 
   margin-left: 300px;
+}
+
+.section-container {
+  margin-top: 5rem;
 }
 
 .logo {
@@ -59,25 +64,16 @@ h2 {
   font-size: 1.3em;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 /* book card stuff */
 .book-listings {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   
-
 }
 
 .book-card {
-  width: 250px;
+  width: 200px;
   height: 350px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -95,15 +91,20 @@ h2 {
 }
 
 .book-details {
-  padding: 8px;
+  padding: 12px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  text-align: left;
+  overflow: hidden;
 }
 
 .book-title {
   font-size: 1.1em;
+  line-height: 1em;
   margin: 0;
+  flex-grow: 0; 
+  text-overflow: ellipsis; 
 }
 
 .book-author {
@@ -112,22 +113,23 @@ h2 {
   margin: 0.3em 0;
 }
 
-.location {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0.5em;
-  font-size: 0.85em;
-}
-
 .book-owner {
   font-size: 0.85em;
   color: #555;
   margin-top: 0.3em;
 }
 
+.book-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #f9f9f9;
+}
+
+.location,
 .availability {
-  padding: 8px;
+  margin-top: 0.3em;
   text-align: center;
 }
 
