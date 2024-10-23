@@ -25,8 +25,8 @@ const SearchContainer = styled('form')({
   marginBottom: '16px',
 });
 
-const Navbar = () => {
-  const navItems = ['Discover', 'Book listings', 'My listings', 'My Loans', 'Account'];
+const Navbar = ({ onOpen }) => {
+  const navItems = ['Discover', 'My Wishlist', 'My Loans', 'My Listings', 'Account'];
 
   return (
     <Sidebar>
@@ -55,9 +55,10 @@ const Navbar = () => {
         ))}
       </List>
       <Link href="#" underline="none">
-        <Button variant="contained" color="primary" sx={{ marginTop: '16px', width: '100%' }}>
-          Create a listing
-        </Button>
+      <Button onClick={onOpen} variant="contained" color="primary" sx={{ marginTop: '16px', width: '100%' }}>
+        Create a listing
+      </Button>
+
       </Link>
     </Sidebar>
   );

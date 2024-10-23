@@ -10,23 +10,25 @@ const BookCard = ({ bookImage, title, author, location, available, owner }) => {
       <div className="book-details">
         <h2 className="book-title">{title}</h2>
         <p className="book-author">{author}</p>
-        <div className="location">
-          <LocationOnIcon fontSize="small" />
-          <span>{location}</span>
-        </div>
         <p className="book-owner">Owner: {owner}</p>
-      </div>
-      <div className="availability">
-        {available ? (
-          <span className="available">
-            <CheckCircleIcon fontSize="small" /> Available
-          </span>
-        ) : (
-          <span className="unavailable">
-            <CancelIcon fontSize="small" /> Unavailable
-          </span>
-        )}
-      </div>
+        </div>
+        <div className="book-footer">
+          <div className="location">
+            <LocationOnIcon fontSize="small" />
+            <span>{location}</span>
+          </div>
+          <div className="availability">
+            {available ? (
+              <span className="available">
+                <CheckCircleIcon fontSize="small" /> Available
+              </span>
+            ) : (
+              <span className="unavailable">
+                <CancelIcon fontSize="small" /> Unavailable
+              </span>
+            )}
+          </div>
+        </div>
     </div>
   );
 };
