@@ -64,7 +64,7 @@ const App = () => {
           </div>
         </div>
         <div>
-          <Footer/>
+          {/* <Footer/> */}
         </div>
       </div>
       <Dialog open={open} onClose={handleClose}>

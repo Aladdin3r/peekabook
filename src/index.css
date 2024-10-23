@@ -51,6 +51,29 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+#root {
+  display: flex;
+  height: 100vh; /* Ensures it takes up the full height of the screen */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #554971;
+  position: fixed; /* This will dock it to the left */
+  top: 0;
+  left: 0;
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  z-index: 1000; /* Ensure it stays on top if needed */
+}
+
+.main-content {
+  margin-left: 250px; /* Ensure the main content does not overlap the sidebar */
+  padding: 20px;
+  flex-grow: 1;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
