@@ -22,9 +22,8 @@ const App = () => {
         <div className="main-content">
           {/* Other main content goes here */}
           <h1>Welcome to Peekabook!</h1>
-          <p>Your content goes here.</p>
 
-          <h2>Active Listings</h2>
+          <h2>Books Near You:</h2>
 
           <div className="book-listings">
             {booksData.map((book) => (

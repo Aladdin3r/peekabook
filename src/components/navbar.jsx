@@ -5,7 +5,7 @@ import { Search, Menu } from '@mui/icons-material';
 import { styled } from '@mui/system';
 
 const Logo = styled('img')({
-  height: '40px', // Adjust as needed
+  height: '40px',
   marginBottom: '16px',
 });
 
@@ -15,7 +15,7 @@ const Sidebar = styled('div')({
   display: 'flex',
   flexDirection: 'column',
   backgroundColor: '#554971',
-  height: '100vh', // Make it full height
+  height: '100%', 
   color: 'white',
 });
 
