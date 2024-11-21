@@ -1,7 +1,7 @@
 const booksData = [
     {
       id: 1,
-      bookImage: 'https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg',
+      bookImage: '/books/gatsby.webp',
       title: 'The Great Gatsby',
       author: 'F. Scott Fitzgerald',
       location: '2 km away',
@@ -10,7 +10,7 @@ const booksData = [
     },
     {
       id: 2,
-      bookImage: 'https://upload.wikimedia.org/wikipedia/commons/5/52/Harry_Potter_and_the_Cursed_Child_-_London_Book_Fair_2016.jpg',
+      bookImage: '/books/cursed.jpg',
       title: 'Harry Potter and the Cursed Child',
       author: 'J.K. Rowling',
       location: '5 km away',
@@ -19,7 +19,7 @@ const booksData = [
     },
     {
       id: 3,
-      bookImage: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg',
+      bookImage: '/books/mockingbird.jpg',
       title: 'To Kill a Mockingbird',
       author: 'Harper Lee',
       location: '1 km away',
@@ -28,7 +28,7 @@ const booksData = [
     },
     {
       id: 4,
-      bookImage: 'https://upload.wikimedia.org/wikipedia/commons/3/35/Diary_of_a_Wimpy_Kid_copies_on_a_book_shelve.jpg',
+      bookImage: '/books/wimpy.jpg',
       title: 'Diary of a Wimpy Kid',
       author: 'Jeff Kinney',
       location: '3 km away',
@@ -37,7 +37,7 @@ const booksData = [
     },
     {
       id: 5,
-      bookImage: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/Twilight_Tales_Told_to_Tiny_Tots_-_book_cover.png',
+      bookImage: '/books/twilight.jpg',
       title: 'Twilight',
       author: 'Stephenie Meyer',
       location: '7 km away',
