@@ -1,5 +1,6 @@
 import React from 'react';
 import { CssBaseline, ThemeProvider, createTheme, Dialog } from '@mui/material';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar.jsx';
 import './index.css';
 import './App.css';
@@ -7,7 +8,11 @@ import { useState } from 'react';
 import BookCard from './components/BookCard.jsx';
 import booksData from './booksData.js';
 import AddBook from './components/AddBooks.jsx';
-import Map from './components/map.jsx'; 
+import Map from './components/map.jsx';
+import MyWishlist from './pages/wishlist.jsx';
+import MyLoans from './pages/loans.jsx';
+import MyListings from './pages/listings.jsx';
+import Account from './pages/account.jsx';
 
 const theme = createTheme({
   palette: {
@@ -44,39 +49,56 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div id="root">
-        <div className="sidebar">
-          <Navbar onOpen={handleOpen} />
-        </div>
-        <div className="main-content">
-          <h1>Welcome to Peekabook!</h1>
-          <div className="section-container">
-            <h2>Books Near You:</h2>
-            <Map /> 
+      <Router>
+        <div id="root">
+          <div className="sidebar">
+            <Navbar onOpen={handleOpen} />
           </div>
-          <div className="section-container">
-            <h2>Books You Might Like:</h2>
-            <div className="book-listings">
-              {books.map((book) => (
-                <BookCard
-                  key={book.id}
-                  bookImage={book.bookImage}
-                  title={book.title}
-                  author={book.author}
-                  location={book.location}
-                  available={book.available}
-                  owner={book.owner}
-                />
-              ))}
-            </div>
+          <div className="main-content">
+            <Routes>
+              {/* Default Route: Home / Discover */}
+              <Route
+                path="/"
+                element={
+                  <div>
+                    <h1>Welcome to Peekabook!</h1>
+                    <div className="section-container">
+                      <h2>Books Near You:</h2>
+                      <Map />
+                    </div>
+                    <div className="section-container">
+                      <h2>Books You Might Like:</h2>
+                      <div className="book-listings">
+                        {books.map((book) => (
+                          <BookCard
+                            key={book.id}
+                            bookImage={book.bookImage}
+                            title={book.title}
+                            author={book.author}
+                            location={book.location}
+                            available={book.available}
+                            owner={book.owner}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                }
+              />
+              {/* Other Routes */}
+              <Route path="/wishlist" element={<MyWishlist books={books} />} />
+              <Route path="/loans" element={<MyLoans books={books} />} />
+              <Route path="/listings" element={<MyListings books={books} />} />
+              <Route path="/account" element={<Account />} />
+            </Routes>
           </div>
         </div>
-      </div>
-      <Dialog open={open} onClose={handleClose}>
-        <div style={{ padding: '20px' }}>
-          <AddBook onAddBook={handleAddBook} />
-        </div>
-      </Dialog>
+        <Dialog open={open} onClose={handleClose}>
+          <div style={{ padding: '20px' }}>
+            <AddBook onAddBook={handleAddBook} />
+          </div>
+        </Dialog>
+      </Router>
     </ThemeProvider>
   );
 };

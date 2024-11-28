@@ -1,7 +1,8 @@
 import React from 'react';
-import { Drawer, List, ListItem, ListItemText, TextField, IconButton, Button, Link } from '@mui/material';
+import { Drawer, List, ListItem, ListItemText, TextField, IconButton, Button } from '@mui/material';
 import { Search } from '@mui/icons-material';
 import { styled } from '@mui/system';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const LogoContainer = styled('div')({
   display: 'flex',
@@ -11,14 +12,14 @@ const LogoContainer = styled('div')({
 
 const Logo = styled('img')({
   height: '40px',
-  marginRight: '10px', 
+  marginRight: '10px',
 });
 
 const AppName = styled('h1')({
   fontSize: '1.5rem',
-  color: 'white', 
-  margin: 0, 
-  fontWeight: 'normal', 
+  color: 'white',
+  margin: 0,
+  fontWeight: 'normal',
 });
 
 const SearchContainer = styled('form')({
@@ -27,10 +28,17 @@ const SearchContainer = styled('form')({
   marginBottom: '16px',
 });
 
-const drawerWidth = 250; 
+const drawerWidth = 250;
 
 const Navbar = ({ onOpen }) => {
-  const navItems = ['Discover', 'My Wishlist', 'My Loans', 'My Listings', 'Account'];
+  // Define nav items with their corresponding routes
+  const navItems = [
+    { text: 'Discover', path: '/' },
+    { text: 'My Wishlist', path: '/wishlist' },
+    { text: 'My Loans', path: '/loans' },
+    { text: 'My Listings', path: '/listings' },
+    { text: 'Account', path: '/account' },
+  ];
 
   return (
     <Drawer
@@ -42,7 +50,7 @@ const Navbar = ({ onOpen }) => {
         '& .MuiDrawer-paper': {
           width: drawerWidth,
           boxSizing: 'border-box',
-          backgroundColor: '#554971', 
+          backgroundColor: '#554971',
           color: 'white',
         },
       }}
@@ -50,7 +58,7 @@ const Navbar = ({ onOpen }) => {
       <div style={{ padding: '16px' }}>
         <LogoContainer>
           <Logo src="logo-white.svg" alt="Logo" />
-          <AppName>Peekabook</AppName> 
+          <AppName>Peekabook</AppName>
         </LogoContainer>
         <SearchContainer>
           <TextField
@@ -65,19 +73,23 @@ const Navbar = ({ onOpen }) => {
               ),
             }}
             sx={{
-              backgroundColor: 'white', 
+              backgroundColor: 'white',
               borderRadius: '4px',
               '& .MuiOutlinedInput-root': {
-                color: 'black', 
+                color: 'black',
               },
             }}
           />
         </SearchContainer>
         <List>
-          {navItems.map((text) => (
-            <ListItem button key={text}>
-              <Link href="#" underline="none" sx={{ width: '100%', color: '#f5f3f5' }}>
-                <ListItemText primary={text} />
+          {navItems.map((item) => (
+            <ListItem button key={item.text}>
+              {/* Use Link from react-router-dom */}
+              <Link
+                to={item.path} // Specify the route
+                style={{ textDecoration: 'none', width: '100%', color: '#f5f3f5' }}
+              >
+                <ListItemText primary={item.text} />
               </Link>
             </ListItem>
           ))}
