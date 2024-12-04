@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CssBaseline, ThemeProvider, createTheme, Dialog } from '@mui/material';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar.jsx';
 import './index.css';
 import './App.css';
-import { useState } from 'react';
 import BookCard from './components/BookCard.jsx';
 import booksData from './booksData.js';
 import AddBook from './components/AddBooks.jsx';
@@ -30,10 +29,7 @@ const App = () => {
   const [open, setOpen] = useState(false);
 
   const handleAddBook = (newBook) => {
-    const updatedBooks = [
-      ...books,
-      { ...newBook, id: books.length + 1 }
-    ];
+    const updatedBooks = [...books, { ...newBook, id: books.length + 1 }];
     setBooks(updatedBooks);
     setOpen(false);
   };
@@ -56,7 +52,6 @@ const App = () => {
           </div>
           <div className="main-content">
             <Routes>
-              {/* Default Route: Home / Discover */}
               <Route
                 path="/"
                 element={
@@ -85,15 +80,22 @@ const App = () => {
                   </div>
                 }
               />
-              {/* Other Routes */}
               <Route path="/wishlist" element={<MyWishlist books={books} />} />
               <Route path="/loans" element={<MyLoans books={books} />} />
               <Route path="/listings" element={<MyListings books={books} />} />
               <Route path="/account" element={<Account />} />
+              <Route
+                path="*"
+                element={
+                  <div>
+                    <h1>404 - Page Not Found</h1>
+                  </div>
+                }
+              />
             </Routes>
           </div>
         </div>
-        <Dialog open={open} onClose={handleClose}>
+        <Dialog open={open} onClose={handleClose} aria-labelledby="add-book-dialog">
           <div style={{ padding: '20px' }}>
             <AddBook onAddBook={handleAddBook} />
           </div>
