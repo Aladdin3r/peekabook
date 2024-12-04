@@ -11,7 +11,7 @@ import Map from './components/map.jsx';
 import MyWishlist from './pages/wishlist.jsx';
 import MyLoans from './pages/loans.jsx';
 import MyListings from './pages/listings.jsx';
-import Account from './pages/account.jsx';
+import Account from './pages/Account.jsx';
 
 const theme = createTheme({
   palette: {
